@@ -1,7 +1,6 @@
 import socket
 from concurrent.futures import ThreadPoolExecutor
 
-# Функция для проверки порта
 def check_port(host, port):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.settimeout(1)
@@ -11,7 +10,6 @@ def check_port(host, port):
         else:
             return port, False
 
-# Функция для сканирования диапазона портов
 def scan_ports(host, start_port, end_port, num_threads=100):
     open_ports = []
     
